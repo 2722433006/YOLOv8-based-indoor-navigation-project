@@ -29,7 +29,8 @@ cd YOLOv8-based-indoor-navigation-project
 # (如果你上传的文件名是 py36.yaml, 请把这里改成 -f py36.yaml)
 conda env create -f environment.yml
 
-# 2. 激活环境
+### 2. 激活环境
+```bash
 conda activate yolo_env
 # (推荐) 使用你的自定义脚本
 python train.py
