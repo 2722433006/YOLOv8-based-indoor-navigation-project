@@ -104,5 +104,3 @@ yolo train data=datasets/your_data.yaml model=yolov8n.pt epochs=100 imgsz=640
 
 本项目采用 [AGPL-3.0 license](https://www.google.com/search?q=LICENSE) 许可证。
 
-```
-```
