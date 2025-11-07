@@ -25,3 +25,63 @@
 ```bash
 git clone [https://github.com/2722433006/YOLOv8-based-indoor-navigation-project.git](https://github.com/2722433006/YOLOv8-based-indoor-navigation-project.git)
 cd YOLOv8-based-indoor-navigation-project
+本项目的数据集（datasets 文件夹）由于体积过大，未上传至 GitHub 仓库（已通过 .gitignore 忽略）。
+
+请从以下链接手动下载 datasets.zip，并将其解压到项目的根目录：
+
+➡️ 点击此处下载数据集 (datasets.zip)
+
+(迅雷网盘链接，提取码: fiA1)
+
+3. 创建 Conda 环境
+本项目依赖 Python 3.9.23, PyTorch 2.5.1 和 CUDA 12.1。
+
+我们提供了一个完整的环境配置文件 environment.yml（基于 py36.yaml）来一键创建环境。
+
+Bash
+
+# (假设你上传的文件名为 py36.yaml, 请确保文件名一致)
+conda env create -f py36.yaml
+4. 激活并使用
+Bash
+
+# 激活环境
+conda activate yolo_env
+现在你可以开始使用了！
+
+🎮 如何使用
+确保你已经激活了 yolo_env 环境。本项目包含了几个关键的自定义脚本：
+
+1. 训练模型
+数据集已配置好。你可以使用 train.py 脚本开始训练：
+
+Bash
+
+# (推荐) 使用你的自定义脚本
+python train.py
+或者，你也可以使用 ultralytics 命令行（请确保 datasets/ 目录下的 .yaml 配置文件路径正确）：
+
+Bash
+
+# (或者) 使用 Ultralytics 命令行
+yolo train data=datasets/your_data.yaml model=yolov8n.pt epochs=100 imgsz=640
+2. 进行预测
+训练完成后，最佳模型会保存在 runs/detect/train/weights/best.pt。
+
+测试图片 (使用 predict.py)：
+
+Bash
+
+python predict.py --source path/to/your/image.jpg
+测试视频 (使用 predict_video.py)：
+
+Bash
+
+python predict_video.py --source path/to/your/video.mp4
+运行自定义测试 (使用 my_test.py)：
+
+Bash
+
+python my_test.py
+📝 许可证
+本项目采用 AGPL-3.0 license 许可证。
