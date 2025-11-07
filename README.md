@@ -18,21 +18,10 @@
 
 ## 🚀 快速安装 (推荐)
 
-本项目包含一个完整的 Conda 环境配置文件 `environment.yml`（基于 `py36.yaml`），可一键复现所有依赖。
+请按照以下 4 个步骤操作：
 
 ### 1. 克隆项目
 
 ```bash
 git clone [https://github.com/2722433006/YOLOv8-based-indoor-navigation-project.git](https://github.com/2722433006/YOLOv8-based-indoor-navigation-project.git)
 cd YOLOv8-based-indoor-navigation-project
-# 1. (推荐) 使用 environment.yml 一键创建
-# (如果你上传的文件名是 py36.yaml, 请把这里改成 -f py36.yaml)
-conda env create -f environment.yml
-
-### 2. 激活环境
-```bash
-conda activate yolo_env
-# (推荐) 使用你的自定义脚本
-python train.py
-python predict.py --source path/to/your/image.jpg
-python my_test.py
