@@ -1,87 +1,83 @@
-# YOLOv8-based-indoor-navigation-project
-![Python 3.9+](https://img.shields.io/badge/python-3.9-blue.svg) ![PyTorch 2.5.1](https://img.shields.io/badge/PyTorch-2.5.1-red.svg) ![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)
+YOLOv8-based-indoor-navigation-project
+https://img.shields.io/badge/python-3.9-blue.svg
+https://img.shields.io/badge/PyTorch-2.5.1-red.svg
+https://img.shields.io/badge/License-AGPL_v3-blue.svg
 
-本项目基于 **YOLOv8**，是一个为大学与企业实际合作项目开发的室内导航标识识别系统。
+This project is based on YOLOv8 and developed as an indoor navigation sign recognition system for university-enterprise collaboration projects.
 
-本项目创建并训练了一个自定义的常见商场标识符数据集。该模型能够实时、准确地识别多种关键室内标识，为室内导航或辅助视觉系统提供支持。
+We created and trained a custom dataset of common mall signage. The model can accurately recognize various key indoor signs in real-time, providing support for indoor navigation or visual assistance systems.
 
-## 💡 核心功能
+💡 Core Features
+The model can accurately recognize the following common mall signage:
 
-本模型能够准确识别以下常见商场标识符：
+🚻 Restroom Sign
 
-* 🚻 **通用洗手间标识**
-* 🚹 **男洗手间标识**
-* 🚺 **女洗手间标识**
-* ♿ **无障碍洗手间标识**
-* 🔀 **楼梯间标识**
-* 🆘 **紧急出口标识**
+🚹 Men's Restroom Sign
 
-## 🚀 快速安装 (推荐)
+🚺 Women's Restroom Sign
 
-请按照以下 4 个步骤操作：
+♿ Accessible Restroom Sign
 
-### 1. 克隆项目
+🔀 Staircase Sign
 
-```bash
-git clone [https://github.com/2722433006/YOLOv8-based-indoor-navigation-project.git](https://github.com/2722433006/YOLOv8-based-indoor-navigation-project.git)
+🆘 Emergency Exit Sign
+
+🚀 Quick Installation (Recommended)
+Please follow these 4 steps:
+
+1. Clone the Project
+bash
+git clone https://github.com/2722433006/YOLOv8-based-indoor-navigation-project.git
 cd YOLOv8-based-indoor-navigation-project
-本项目的数据集（datasets 文件夹）由于体积过大，未上传至 GitHub 仓库（已通过 .gitignore 忽略）。
+2. Download Dataset
+The dataset (datasets folder) is too large to be uploaded to GitHub (ignored via .gitignore).
 
-请从以下链接手动下载 datasets.zip，并将其解压到项目的根目录：
+Please manually download datasets.zip from the link below and extract it to the project root directory:
 
-➡️ 点击此处下载数据集 (datasets.zip)
+➡️ Download Dataset (datasets.zip)
+(迅雷网盘链接, extraction code: fiA1)
 
-(迅雷网盘链接，提取码: fiA1)
+3. Create Conda Environment
+This project requires Python 3.9.23, PyTorch 2.5.1 and CUDA 12.1.
 
-3. 创建 Conda 环境
-本项目依赖 Python 3.9.23, PyTorch 2.5.1 和 CUDA 12.1。
+We provide a complete environment configuration file py36.yaml to create the environment with one command.
 
-我们提供了一个完整的环境配置文件 environment.yml（基于 py36.yaml）来一键创建环境。
-
-Bash
-
-# (假设你上传的文件名为 py36.yaml, 请确保文件名一致)
+bash
 conda env create -f py36.yaml
-4. 激活并使用
-Bash
-
-# 激活环境
+4. Activate and Use
+bash
+# Activate environment
 conda activate yolo_env
-现在你可以开始使用了！
+Now you're ready to use the project!
 
-🎮 如何使用
-确保你已经激活了 yolo_env 环境。本项目包含了几个关键的自定义脚本：
+🎮 How to Use
+Make sure you have activated the yolo_env environment. This project includes several key custom scripts:
 
-1. 训练模型
-数据集已配置好。你可以使用 train.py 脚本开始训练：
+1. Train Model
+The dataset is already configured. You can use the train.py script to start training:
 
-Bash
-
-# (推荐) 使用你的自定义脚本
+bash
+# (Recommended) Use your custom script
 python train.py
-或者，你也可以使用 ultralytics 命令行（请确保 datasets/ 目录下的 .yaml 配置文件路径正确）：
+Alternatively, you can use the ultralytics command line (make sure the .yaml configuration file path in datasets/ directory is correct):
 
-Bash
-
-# (或者) 使用 Ultralytics 命令行
+bash
+# (Or) Use Ultralytics command line
 yolo train data=datasets/your_data.yaml model=yolov8n.pt epochs=100 imgsz=640
-2. 进行预测
-训练完成后，最佳模型会保存在 runs/detect/train/weights/best.pt。
+2. Make Predictions
+After training, the best model will be saved in runs/detect/train/weights/best.pt.
 
-测试图片 (使用 predict.py)：
+Test on images (using predict.py):
 
-Bash
-
+bash
 python predict.py --source path/to/your/image.jpg
-测试视频 (使用 predict_video.py)：
+Test on videos (using predict_video.py):
 
-Bash
-
+bash
 python predict_video.py --source path/to/your/video.mp4
-运行自定义测试 (使用 my_test.py)：
+Run custom testing (using my_test.py):
 
-Bash
-
+bash
 python my_test.py
-📝 许可证
-本项目采用 AGPL-3.0 license 许可证。
+📄 License
+This project is licensed under the AGPL-3.0 License.
