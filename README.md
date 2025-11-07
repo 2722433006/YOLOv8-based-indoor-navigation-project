@@ -36,9 +36,10 @@ cd YOLOv8-based-indoor-navigation-project
 
 请从以下链接手动下载 `datasets.zip`，**并将其解压到项目的根目录**：
 
-**[➡️ 点击此处下载数据集 (datasets.zip)](https://pan.xunlei.com/s/VOdTpbSpMMBaUDa65zsdxAfiA1#)**
+**[➡️ 点击此处下载数据集 (datasets.zip)](分享文件：datasets
+链接：https://pan.xunlei.com/s/VOdTw9IyX90NIkffyAnu6wD_A1?pwd=v9bn#)**
 
-*(迅雷网盘链接，提取码: wh5t)*
+
 
 
 ### 3\. 创建 Conda 环境
