@@ -1,6 +1,3 @@
-### 👇 README.md 最终模板 (请复制这一个框里的所有内容)
-
-````markdown
 # YOLOv8-based-indoor-navigation-project
 ![Python 3.9+](https://img.shields.io/badge/python-3.9-blue.svg) ![PyTorch 2.5.1](https://img.shields.io/badge/PyTorch-2.5.1-red.svg) ![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)
 
