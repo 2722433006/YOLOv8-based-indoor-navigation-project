@@ -1,11 +1,12 @@
 import cv2
+
 from ultralytics import YOLO
 
 
 def main():
     # --- 1. 定义模型和视频路径 ---
-    model_path = r'D:/data/ultralytics-main/runs/detect/signage_yolov8n_augmented_run_v24/weights/best.pt'
-    video_path = r'D:\data\ultralytics-main\video.mp4'
+    model_path = r"D:/data/ultralytics-main/runs/detect/signage_yolov8n_augmented_run_v24/weights/best.pt"
+    video_path = r"D:\data\ultralytics-main\video.mp4"
 
     # --- 2. 加载模型和视频 ---
     model = YOLO(model_path)
@@ -19,8 +20,8 @@ def main():
     frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = int(cap.get(cv2.CAP_PROP_FPS))
-    output_path = 'predicted_video.mp4'
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    output_path = "predicted_video.mp4"
+    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     writer = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
     # ------------------------------------
 
